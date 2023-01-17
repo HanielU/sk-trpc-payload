@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "jsx": "react",
+    "importsNotUsedAsValues": "error",
+
+    "baseUrl": ".",
+    "paths": {
+      "~": ["src"],
+      "~/*": ["src/*"],
+      "~p": ["src/payload"],
+      "~p/*": ["src/payload/*"],
+      "~t": ["src/trpc"],
+      "~t/*": ["src/trpc/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "build"]
+}

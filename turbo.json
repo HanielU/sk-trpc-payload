@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".svelte-kit/**", ".vercel/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "preview": {
+      "cache": false
+    },
+    "api#build": {
+      "env": ["PAYLOAD_SECRET", "MONGODB_URI"]
+    }
+  }
+}

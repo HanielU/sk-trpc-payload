@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "preview": "turbo run preview --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@apps/web": "workspace:*",
+    "eslint": "^8.30.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^2.8.1",
+    "prettier-plugin-svelte": "^2.9.0",
+    "turbo": "latest"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "packageManager": "yarn@3.3.1"
+}
