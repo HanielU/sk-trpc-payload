@@ -1,7 +1,13 @@
 import payload from "payload";
-import type { Context } from "~t/context";
-import type { Post } from "~/payload-types";
+import type { Context } from "../context";
+import type { Post } from "../../payload-types";
 import { initTRPC } from "@trpc/server";
+
+/* 
+  NOTE:
+  Do not use path aliases for type imports else api consumers
+  will get incorrect typings.
+*/
 
 const t = initTRPC.context<Context>().create();
 
