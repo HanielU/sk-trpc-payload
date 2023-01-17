@@ -1,3 +1,3 @@
-import { config } from "@apps/mobile/uno.config";
+import { config } from "@apps/web/uno.config";
 
 export default config;

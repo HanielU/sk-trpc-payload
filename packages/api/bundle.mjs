@@ -22,7 +22,7 @@ const main = async () => {
   }
 
   await esbuild.build({
-    entryPoints: stack.filter(f => f.endsWith(".ts")),
+    entryPoints: stack.filter(f => !f.endsWith("types.ts") && f.endsWith(".ts")),
     bundle: true,
     platform: "node",
     target: "node14",

@@ -1,6 +1,6 @@
 import payload from "payload";
-import type { Context } from "../context";
-import type { Post } from "../payload-types";
+import type { Context } from "~t/context";
+import type { Post } from "~/payload-types";
 import { initTRPC } from "@trpc/server";
 
 const t = initTRPC.context<Context>().create();
