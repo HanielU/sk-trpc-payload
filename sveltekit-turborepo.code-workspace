@@ -4,7 +4,7 @@
       "path": "."
     },
     {
-      "path": "apps/mobile"
+      "path": "apps/web"
     },
     {
       "path": "packages/api"
