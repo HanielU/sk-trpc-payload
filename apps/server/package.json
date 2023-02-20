@@ -4,7 +4,7 @@
   "private": true,
   "main": "src/trpc/router.mts",
   "license": "MIT",
-  "type": "module",
+  "#type": "module",
   "scripts": {
     "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint --ignore-path=../../.eslintignore .",
     "start": "chmod +x ./rail/start.sh && ./rail/start.sh && cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.cjs NODE_ENV=production node dist/server.mjs",

@@ -1,8 +1,8 @@
-import Categories from "./collections/Categories";
-import Posts from "./collections/Posts";
-import Tags from "./collections/Tags";
-import Users from "./collections/Users";
-import Customers from "./collections/Customers";
+import Categories from "./collections/Categories.js";
+import Posts from "./collections/Posts.js";
+import Tags from "./collections/Tags.js";
+import Users from "./collections/Users.js";
+import Customers from "./collections/Customers.js";
 import path from "path";
 import { buildConfig } from "payload/config";
 
