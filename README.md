@@ -1,18 +1,22 @@
-# Turborepo Svelte & Payload CMS(Express) & tRPC starter
+# Svelte-Kit + PayloadCMS + tRPC Turborepo
 
 This is an custom made Turborepo starter.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This [Turborepo] includes the following packages/apps:
 
-### Apps and Packages
+### Apps
+Each app is 100% [TypeScript].
 
-- `web`: a [svelte-kit] web app
-- `api`: an [express] app with [payloadcms] and [trpc]
+- `web`: a [Svelte-kit] web app with [UnoCSS] for styling
+- `server`: an [Express] app with [PayloadCMS] and [tRPC] setup
+
+### Packages
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
+- `dum`: a scripts runner executable written in [Rust]
+- `replacer`: A CLI for replacing strings in files and directories written in [Rust]
 
-Each package/app is 100% [TypeScript].
 
 ### Utilities
 
@@ -22,18 +26,33 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint] for code linting
 - [Prettier] for code formatting
 
-## Developing
-
-Run the following command:
+## Getting Started
+This project uses [pnpm]. 
 
 ```sh
-npx degit HanielU/turbo-sk-payload-trpc
-cd turbo-sk-payload-trpc
-pnpm install
+npx degit HanielU/turbo-sk-payload-trpc my-project # download the project
+
+cd my-project # navigate into the project
+
+pnpm install # install dependencies
 ```
+
+
+### Running the apps
+In the project root and run the following command.
+
+```sh
+pnpm dev
+```
+This will run both the Svelte-kit and Payload apps in parallel.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
 
 <!-- initialise all the links used -->
 
+[turborepo]: https://turbo.build/repo
 [eslint]: https://eslint.org
 [express]: https://expressjs.com
 [fastify]: https://www.fastify.io
@@ -41,5 +60,8 @@ pnpm install
 [prettier]: https://prettier.io
 [prisma]: https://www.prisma.io
 [svelte-kit]: https://kit.svelte.dev
+[unocss]: https://github.com/unocss/unocss
 [trpc]: https://trpc.io
 [typescript]: https://www.typescriptlang.org
+[rust]: https://www.rust-lang.org
+[pnpm]: https://pnpm.io
