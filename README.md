@@ -1,4 +1,4 @@
-# Turborepo Svelte & Fastify w/trpc & prisma starter
+# Turborepo Svelte & Payload CMS(Express) & tRPC starter
 
 This is an custom made Turborepo starter.
 
@@ -8,8 +8,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `mobile`: a [svelte-kit] app
-- `api`: a [fastify] app with [trpc] and [prisma]
+- `web`: a [svelte-kit] web app
+- `api`: an [express] app with [payloadcms] and [trpc]
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
 
 Each package/app is 100% [TypeScript].
@@ -22,21 +22,24 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint] for code linting
 - [Prettier] for code formatting
 
-## Using this example
+## Developing
 
 Run the following command:
 
 ```sh
-npx degit HanielU/turbo-sk-fastify-trpc-prisma turbo-fastify
-cd turbo-fastify
+npx degit AmcecHealth/amcechealth.com
+cd amcechealth.com
 yarn
-git init . && git add . && git commit -m "Init"
 ```
+
 <!-- initialise all the links used -->
-[trpc]: https://trpc.io
+
+[eslint]: https://eslint.org
+[express]: https://expressjs.com
 [fastify]: https://www.fastify.io
+[payloadcms]: https://www.payloadcms.com
+[prettier]: https://prettier.io
 [prisma]: https://www.prisma.io
 [svelte-kit]: https://kit.svelte.dev
+[trpc]: https://trpc.io
 [typescript]: https://www.typescriptlang.org
-[eslint]: https://eslint.org
-[prettier]: https://prettier.io

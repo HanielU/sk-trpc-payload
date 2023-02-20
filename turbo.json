@@ -5,17 +5,50 @@
       "dependsOn": ["^build"],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     },
+    "build:local": {
+      "dependsOn": ["^build:local"],
+      "outputs": [".svelte-kit/**"]
+    },
     "lint": {
       "outputs": []
     },
     "dev": {
       "cache": false
     },
+    "start": {
+      "cache": false
+    },
+    "start:local": {
+      "cache": false
+    },
     "preview": {
       "cache": false
     },
-    "api#build": {
-      "env": ["PAYLOAD_SECRET", "MONGODB_URI"]
+
+    "web#build": {
+      "env": ["PUBLIC_PORT", "PORT"]
+    },
+    "server#build": {
+      "env": [
+        "PUBLIC_PORT",
+        "PORT",
+        "PAYLOAD_SECRET",
+        "MONGO_URL",
+        "PAYLOAD_PUBLIC_SERVER_URL"
+      ]
+    },
+
+    "web#build:local": {
+      "env": ["PUBLIC_PORT", "PORT"]
+    },
+    "server#build:local": {
+      "env": [
+        "PUBLIC_PORT",
+        "PORT",
+        "PAYLOAD_SECRET",
+        "MONGO_URL",
+        "PAYLOAD_PUBLIC_SERVER_URL"
+      ]
     }
   }
 }

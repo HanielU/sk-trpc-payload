@@ -1,0 +1,6 @@
+{
+  "name": "@packages/replacer",
+  "version": "0.0.0",
+  "description": "A Rust CLI for replacing strings in files and directories",
+  "bin": "./bin/replacer.exe"
+}

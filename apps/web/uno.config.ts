@@ -1,11 +1,11 @@
 import {
+  defineConfig,
   extractorSvelte,
   presetIcons,
   presetUno,
   presetAttributify,
   transformerDirectives,
   transformerVariantGroup,
-  type UserConfig,
 } from "unocss";
 
 import { handler as h, variantGetParameter } from "@unocss/preset-mini/utils";
@@ -19,7 +19,7 @@ import { handler as h, variantGetParameter } from "@unocss/preset-mini/utils";
 // https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group
 
 // https://github.com/unocss/unocss#configurations
-export const config: UserConfig = {
+export default defineConfig({
   extractors: [extractorSvelte],
 
   // https://github.com/unocss/unocss#extend-theme
@@ -29,7 +29,18 @@ export const config: UserConfig = {
   rules: [],
 
   // https://github.com/unocss/unocss#shortcuts
-  shortcuts: [],
+  shortcuts: [
+    [
+      // flex-s stands for flex-shortcut
+      // to avoid mixups with default flex utilities like flex-wrap
+      /^flex-s-(start|center|between|evenly|around|end)(-(start|center|baseline|end))?$/,
+      ([, justify, align]) =>
+        `flex justify-${justify} items${align || "-center"}`,
+      { layer: "default" },
+    ],
+    // use when width and height values are the same
+    [/^square-(.*)$/, ([, v]) => `h-${v} w-${v}`, { layer: "utilities" }],
+  ],
 
   preflights: [
     {
@@ -53,7 +64,7 @@ export const config: UserConfig = {
       // or
       // "@min-width:class" and "@min-h-width:class"
       name: "arbitrary-media-query",
-      match(matcher) {
+      match(matcher, { theme }) {
         // prefix with @ to specify that it's a media query
         const minVariant = variantGetParameter("@min-", matcher, [":"]);
         const maxVariant = variantGetParameter("@max-", matcher, [":"]);
@@ -85,17 +96,25 @@ export const config: UserConfig = {
           // this is for extracting the value from the match and
           // makes sure it either has no brackets or has brackets
           const extractedValue =
-            h.bracket(match) || (!match.startsWith("[") && !match.endsWith("]") && match) || "";
+            h.bracket(match) ||
+            (!match.startsWith("[") && !match.endsWith("]") && match) ||
+            "";
           const endsWithUnit = /^\d+(em|px|rem)$/.test(extractedValue);
           const isOnlyNum = /^\d+$/.test(extractedValue);
 
-          if (endsWithUnit || isOnlyNum) {
+          if (
+            endsWithUnit ||
+            isOnlyNum ||
+            theme["breakpoints"][extractedValue]
+          ) {
             return {
               matcher: rest,
               handle: (input, next) =>
                 next({
                   ...input,
-                  parent: `${input.parent ? `${input.parent} $$ ` : ""}@media (${
+                  parent: `${
+                    input.parent ? `${input.parent} $$ ` : ""
+                  }@media (${
                     matched.type == "min"
                       ? "min-width"
                       : matched.type == "max"
@@ -103,7 +122,13 @@ export const config: UserConfig = {
                       : matched.type == "min-h"
                       ? "min-height"
                       : "max-height"
-                  }:${endsWithUnit ? extractedValue : extractedValue + "px"})`,
+                  }:${
+                    endsWithUnit
+                      ? extractedValue
+                      : isOnlyNum
+                      ? extractedValue + "px"
+                      : theme["breakpoints"][extractedValue]
+                  })`,
                 }),
             };
           }
@@ -113,6 +138,10 @@ export const config: UserConfig = {
   ],
 
   // https://github.com/unocss/unocss#using-presets
-  presets: [presetUno(), presetIcons({ scale: 1.2 }), presetAttributify()],
+  presets: [
+    presetUno(),
+    presetIcons({ scale: 1.2, cdn: "https://esm.sh/" }),
+    presetAttributify(),
+  ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-};
+});

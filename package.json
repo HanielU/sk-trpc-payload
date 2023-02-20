@@ -1,23 +1,25 @@
 {
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "preview": "turbo run preview --parallel",
+    "build:no-logs": "dotenv -- turbo run build --output-logs=errors-only",
+    "build": "dotenv -- turbo run build",
+    "build:local": "dotenv -- turbo run build:local",
+    "dev": "dotenv -- turbo run dev --parallel",
+    "dev:web": "dotenv -- turbo run dev --filter=web",
+    "dev:server": "dotenv -- turbo run dev --filter=server",
+    "preview": "dotenv -- turbo run preview --parallel",
+    "start:server": "dotenv -- turbo run start --filter=server",
+    "start:server-local": "dotenv -- turbo run start:local --filter=server",
     "lint": "turbo run lint",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "@apps/web": "workspace:*",
-    "eslint": "^8.30.0",
+    "dotenv-cli": "^7.0.0",
+    "eslint": "^8.33.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",
-    "turbo": "latest"
-  },
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
-  "packageManager": "yarn@3.3.1"
+    "turbo": "^1.7.4"
+  }
 }

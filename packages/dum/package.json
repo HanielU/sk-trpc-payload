@@ -1,0 +1,6 @@
+{
+  "name": "@packages/dum",
+  "version": "0.0.0",
+  "description": "A Rust scripts runner",
+  "bin": "./bin/dum.exe"
+}
