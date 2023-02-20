@@ -3,13 +3,13 @@
   "scripts": {
     "build:no-logs": "dotenv -- turbo run build --output-logs=errors-only",
     "build": "dotenv -- turbo run build",
-    "build:local": "dotenv -- turbo run build:local",
+    "build:win": "dotenv -- turbo run build:win",
     "dev": "dotenv -- turbo run dev --parallel",
     "dev:web": "dotenv -- turbo run dev --filter=web",
     "dev:server": "dotenv -- turbo run dev --filter=server",
     "preview": "dotenv -- turbo run preview --parallel",
     "start:server": "dotenv -- turbo run start --filter=server",
-    "start:server-local": "dotenv -- turbo run start:local --filter=server",
+    "start:server-win": "dotenv -- turbo run start:win --filter=server",
     "lint": "turbo run lint",
     "format": "prettier --write ."
   },

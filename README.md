@@ -27,9 +27,9 @@ This Turborepo has some additional tools already setup for you:
 Run the following command:
 
 ```sh
-npx degit AmcecHealth/amcechealth.com
-cd amcechealth.com
-yarn
+npx degit HanielU/turbo-sk-payload-trpc
+cd turbo-sk-payload-trpc
+pnpm install
 ```
 
 <!-- initialise all the links used -->
