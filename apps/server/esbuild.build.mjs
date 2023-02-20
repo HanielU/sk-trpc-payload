@@ -27,11 +27,17 @@ async function* getFiles(dir) {
       // !f.endsWith("handler.ts") &&
       !f.endsWith("config.ts") &&
       !f.includes("collections") &&
+      !f.includes("access") &&
+      !f.includes("hooks") &&
       (f.endsWith(".ts") || f.endsWith(".mts"))
   );
 
   const cjsEntries = stack.filter(
-    f => f.endsWith("config.ts") || f.includes("collections")
+    f =>
+      f.endsWith("config.ts") ||
+      f.includes("collections") ||
+      f.includes("access") ||
+      f.includes("hooks")
   );
 
   await esbuild.build({

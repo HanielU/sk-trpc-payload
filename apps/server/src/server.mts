@@ -6,7 +6,7 @@ import { appRouter } from "./trpc/router.mjs";
 import { createContext } from "./trpc/context.mjs";
 
 // NOTE: Just here as a placeholder for sveltekit
-// handler.mjs will be automatically converted to handler.js
+// handler.mjs will be automatically converted to handler.mjs
 // and is the sveltekit entrypoint
 import { handler } from "./web/handler.mjs";
 

@@ -30,6 +30,6 @@ pnpm run start:server # Start the server in production mode
 
 In this project, **all non payload related** TypeScript files should end in .mts to indicate that they are esmodules. 
 
-Every payload related file must end in the regular `.ts` extension **and must be imported with the `.js` extension**.
+Every payload related file must end in the regular `.ts` extension
 
 Please make sure to follow this naming convention when adding new TypeScript files to the project.
