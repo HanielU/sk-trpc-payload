@@ -5,8 +5,9 @@ import payload from "payload";
 import { appRouter } from "./trpc/router.mjs";
 import { createContext } from "./trpc/context.mjs";
 
-// NOTE: REMEMBER TO CHANGE THE IMPORT LOCATION TO `./web/handler.mjs`
-// BEFORE BUILDING FOR PRODUCTION
+// NOTE: Just here as a placeholder for sveltekit
+// handler.mjs will be automatically converted to handler.js
+// and is the sveltekit entrypoint
 import { handler } from "./web/handler.mjs";
 
 const app = express();
