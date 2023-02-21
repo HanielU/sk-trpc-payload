@@ -10,6 +10,6 @@ chmod +x ./rail/replacer
 node esbuild.build.mjs
 
 # prep-dev
-./rail/replacer --dir ./src/collections .cts .ts --dirfile ./src '.cjs";' '";
+./rail/replacer --dir ./src/collections .cts .ts --dirfile ./src '.cjs";' '";'
 ./rail/replacer --file ./src/payload.config.ts '.cjs";' '";'
 ./rail/replacer --file ./src/server.mts handler.js handler.mjs
