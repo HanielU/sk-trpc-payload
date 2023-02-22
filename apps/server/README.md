@@ -25,10 +25,9 @@ pnpm run build:server # Build the server
 pnpm run start:server # Start the server in production mode
 ```
 
-
 # Note the following!
 
-In this project, **all non payload related** TypeScript files should end in .mts to indicate that they are esmodules. 
+In this project, **all non payload related** TypeScript files should end in .mts to indicate that they are esmodules.
 
 Every payload related file must end in the regular `.ts` extension
 

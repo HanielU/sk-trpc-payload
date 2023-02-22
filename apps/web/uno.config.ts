@@ -138,10 +138,6 @@ export default defineConfig({
   ],
 
   // https://github.com/unocss/unocss#using-presets
-  presets: [
-    presetUno(),
-    presetIcons({ scale: 1.2, cdn: "https://esm.sh/" }),
-    presetAttributify(),
-  ],
+  presets: [presetUno(), presetIcons({ scale: 1.2 }), presetAttributify()],
   transformers: [transformerDirectives(), transformerVariantGroup()],
 });

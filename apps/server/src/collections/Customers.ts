@@ -1,22 +1,4 @@
-import type { Customer } from "payload/generated-types";
-import type { CollectionConfig, FieldHook } from "payload/types";
-
-const AfterLikesChange: FieldHook<Customer> = async ({
-  req,
-  originalDoc,
-  operation,
-}) => {
-  if (operation === "update") {
-    if (req.payload) {
-      const likeCount = originalDoc.likes.length; // needs to be here because it doesn't work in the data object for some reason
-      req.payload.update({
-        collection: "customers",
-        id: originalDoc.id,
-        data: { likeCount },
-      });
-    }
-  }
-};
+import type { CollectionConfig } from "payload/types";
 
 const Customers: CollectionConfig = {
   slug: "customers",
@@ -68,9 +50,6 @@ const Customers: CollectionConfig = {
       type: "relationship",
       relationTo: "posts",
       hasMany: true,
-      hooks: {
-        afterChange: [AfterLikesChange],
-      },
     },
     {
       name: "likeCount",
@@ -79,14 +58,5 @@ const Customers: CollectionConfig = {
     },
   ],
 };
-
-// fetch("/api/collections/customers", {
-//   method: "POST",
-//   body: JSON.stringify({
-//     firstName: "John",
-//     email: "test@google.com",
-//     password: "123456",
-//   }),
-// })
 
 export default Customers;
