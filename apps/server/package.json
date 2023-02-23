@@ -23,6 +23,7 @@
     "mod-on": "replacer --file ./package.json \"#type\": \"type\":"
   },
   "dependencies": {
+    "@trpc/client": "^10.12.0",
     "@trpc/server": "^10.11.1",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
