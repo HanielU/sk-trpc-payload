@@ -11,7 +11,7 @@ import { createContext } from "./trpc/context.mjs";
 import { handler } from "./web/handler.mjs";
 
 const app = express();
-const port = process.env.PORT || process.env.PUBLIC_PORT;
+const port = process.env.PORT || 3000;
 
 // add multiple origins to allowlist
 app.use(
