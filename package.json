@@ -15,11 +15,11 @@
   },
   "devDependencies": {
     "@apps/web": "workspace:*",
-    "dotenv-cli": "^7.0.0",
-    "eslint": "^8.33.0",
+    "dotenv-cli": "^7.1.0",
+    "eslint": "^8.36.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.8.4",
-    "prettier-plugin-svelte": "^2.9.0",
-    "turbo": "^1.7.4"
+    "prettier": "^2.8.6",
+    "prettier-plugin-svelte": "^2.10.0",
+    "turbo": "^1.8.5"
   }
 }

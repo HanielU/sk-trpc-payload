@@ -44,7 +44,6 @@ async function* getFiles(dir) {
     target: "node16",
     outdir: "dist",
     tsconfig: "./tsconfig.json",
-    bundle: false,
     outExtension: { ".js": ".mjs" },
   });
 
@@ -55,7 +54,6 @@ async function* getFiles(dir) {
     outdir: "dist",
     tsconfig: "./tsconfig.json",
     format: "cjs",
-    bundle: false,
     outExtension: { ".js": ".cjs" },
   });
 })();
